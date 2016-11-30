@@ -37,6 +37,33 @@ namespace ConsoleCalculator
                     case MENUS.MSTS:
                         Player.MenuShooterTarget();
                         break;
+                    case MENUS.MDEC1:
+                        Player.MenuDecimalExpression();
+                        break;
+                    case MENUS.MDEC2:
+                        Player.MenuDecimalBinary();
+                        break;
+                    case MENUS.MDEC3:
+                        Player.MenuDecimalHexadecimal();
+                        break;
+                    case MENUS.MBIN1:
+                        Player.MenuBinaryExpression();
+                        break;
+                    case MENUS.MBIN2:
+                        Player.MenuBinaryDecimal();
+                        break;
+                    case MENUS.MBIN3:
+                        Player.MenuBinaryHexadecimal();
+                        break;
+                    case MENUS.MHEX1:
+                        Player.MenuHexadecimalExpression();
+                        break;
+                    case MENUS.MHEX2:
+                        Player.MenuHexadecimalBinary();
+                        break;
+                    case MENUS.MHEX3:
+                        Player.MenuHexadecimalDecimal();
+                        break;
                 }
             }
             Pause();

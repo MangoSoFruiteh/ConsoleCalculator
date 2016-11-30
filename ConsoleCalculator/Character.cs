@@ -9,7 +9,6 @@ namespace ConsoleCalculator
 {
     class Character
     {
-        string menuSelector;
         int playerInput;
         protected MENUS menu;
 
@@ -66,169 +65,98 @@ namespace ConsoleCalculator
 
         public void MenuDecimal()
         {
+            bool oktogo = false;
             char menuItem;
-            Console.Clear();
-            Console.WriteLine("You are now in the Decimal Math section. Select an option below.");
-            Console.WriteLine();
-            Console.WriteLine("[1] Enter Expressions");
-            Console.WriteLine("[2] Decimal to Binary Conversion");
-            Console.WriteLine("[3] Decimal to Hexadecimal Conversion");
-            Console.WriteLine();
-            Console.WriteLine("[~] Back to Main Menu");
+            while(!oktogo)
+            {
+                oktogo = true;
+                Console.Clear();
+                Console.WriteLine("You are now in the Decimal Math section. Select an option below.");
+                Console.WriteLine();
+                Console.WriteLine("[1] Enter Expressions");
+                Console.WriteLine("[2] Decimal to Binary Conversion");
+                Console.WriteLine("[3] Decimal to Hexadecimal Conversion");
+                Console.WriteLine();
+                Console.WriteLine("[~] Back to Main Menu");
 
-            menuItem = char.ToLower(Console.ReadKey().KeyChar);
-            switch (menuItem)
-            {
-                case '1':
-                    break;
-                case '2':
-                    break;
-                case '3':
-                    break;
+                menuItem = char.ToLower(Console.ReadKey().KeyChar);
+                switch (menuItem)
+                {
+                    case '1':
+                        menu = MENUS.MDEC1;
+                        break;
+                    case '2':
+                        menu = MENUS.MDEC2;
+                        break;
+                    case '3':
+                        menu = MENUS.MDEC3;
+                        break;
+                }
             }
-            if (menuSelector == "1")
-            {
-                Console.Clear();
-                Console.WriteLine("Enter expressions below:");
-                Console.WriteLine();
-                Console.ReadLine();
-                //playerInput = EvaluateExpression(math);
-                //Console.WriteLine(playerInput);
-            }
-            if (menuSelector == "2")
-            {
-                Console.Clear();
-                Console.WriteLine("Enter decimal number below.");
-                Console.WriteLine();
-                Console.WriteLine("Input:");
-                playerInput = Convert.ToInt32(Console.ReadLine());
-                string playerAnswer = Convert.ToString(playerInput, 2);
-                Console.WriteLine("Answer:");
-                Console.WriteLine(playerAnswer);
-                Console.ReadKey();
-            }
-            if (menuSelector == "3")
-            {
-                Console.Clear();
-                Console.WriteLine("Enter decimal number below.");
-                Console.WriteLine();
-                Console.WriteLine("Input:");
-                playerInput = Convert.ToInt32(Console.ReadLine());
-                string playerAnswer = Convert.ToString(playerInput, 16);
-                Console.WriteLine("Answer:");
-                Console.WriteLine(playerAnswer);
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Invalid input!");
-                Console.ReadKey();
-            }
-            Console.ReadKey();
         }
 
         public void MenuBinary()
         {
-            Console.Clear();
-            Console.WriteLine("You are now in the Binary Math section. Select an option below.");
-            Console.WriteLine();
-            Console.WriteLine("[1] Enter Expressions");
-            Console.WriteLine("[2] Binary to Decimal Conversion");
-            Console.WriteLine("[3] Binary to Hexadecimal Conversion");
-            Console.WriteLine();
-            Console.WriteLine("[~] Back to Main Menu");
-            menuSelector = Console.ReadLine();
-            if (menuSelector == "1")
+            bool oktogo = false;
+            char menuItem;
+            while (!oktogo)
             {
+                oktogo = true;
                 Console.Clear();
-                Console.WriteLine("Enter expressions below:");
+                Console.WriteLine("You are now in the Binary Math section. Select an option below.");
                 Console.WriteLine();
-                Console.ReadLine();
-                //playerInput = EvaluateExpression(math);
-                //Console.WriteLine(playerInput);
-            }
-            if (menuSelector == "2")
-            {
-                Console.Clear();
-                Console.WriteLine("Enter binary number below.");
+                Console.WriteLine("[1] Enter Expressions");
+                Console.WriteLine("[2] Binary to Decimal Conversion");
+                Console.WriteLine("[3] Binary to Hexadecimal Conversion");
                 Console.WriteLine();
-                Console.WriteLine("Input:");
-                playerInput = Convert.ToInt32(Console.ReadLine());
-                string playerAnswer = Convert.ToString(playerInput, 10);
-                Console.WriteLine("Answer:");
-                Console.WriteLine(playerAnswer);
-                Console.ReadKey();
+                Console.WriteLine("[~] Back to Main Menu");
+
+                menuItem = char.ToLower(Console.ReadKey().KeyChar);
+                switch (menuItem)
+                {
+                    case '1':
+                        menu = MENUS.MBIN1;
+                        break;
+                    case '2':
+                        menu = MENUS.MBIN2;
+                        break;
+                    case '3':
+                        menu = MENUS.MBIN3;
+                        break;
+                }
             }
-            if (menuSelector == "3")
-            {
-                Console.Clear();
-                Console.WriteLine("Enter binary number below.");
-                Console.WriteLine();
-                Console.WriteLine("Input:");
-                playerInput = Convert.ToInt32(Console.ReadLine());
-                string playerAnswer = Convert.ToString(playerInput, 16);
-                Console.WriteLine("Answer:");
-                Console.WriteLine(playerAnswer);
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Invalid input!");
-                Console.ReadKey();
-            }
-            Console.ReadKey();
         }
 
         public void MenuHexadecimal()
         {
-            Console.Clear();
-            Console.WriteLine("You are now in the Hexadecimal Math section. Select an option below.");
-            Console.WriteLine();
-            Console.WriteLine("[1] Enter Expressions");
-            Console.WriteLine("[2] Hexadecimal to Binary Conversion");
-            Console.WriteLine("[3] Hexadecimal to Decimal Conversion");
-            Console.WriteLine();
-            Console.WriteLine("[~] Back to Main Menu");
-            menuSelector = Console.ReadLine();
-            if (menuSelector == "1")
+            bool oktogo = false;
+            char menuItem;
+            while (!oktogo)
             {
+                oktogo = true;
                 Console.Clear();
-                Console.WriteLine("Enter expressions below:");
+                Console.WriteLine("You are now in the Hexadecimal Math section. Select an option below.");
                 Console.WriteLine();
-                Console.ReadLine();
-                //playerInput = EvaluateExpression(math);
-                //Console.WriteLine(playerInput);
-            }
-            if (menuSelector == "2")
-            {
-                Console.Clear();
-                Console.WriteLine("Enter hexadecimal number below.");
+                Console.WriteLine("[1] Enter Expressions");
+                Console.WriteLine("[2] Hexadecimal to Binary Conversion");
+                Console.WriteLine("[3] Hexadecimal to Decimal Conversion");
                 Console.WriteLine();
-                Console.WriteLine("Input:");
-                playerInput = Convert.ToInt32(Console.ReadLine());
-                string playerAnswer = Convert.ToString(playerInput, 2);
-                Console.WriteLine("Answer:");
-                Console.WriteLine(playerAnswer);
-                Console.ReadKey();
+                Console.WriteLine("[~] Back to Main Menu");
+
+                menuItem = char.ToLower(Console.ReadKey().KeyChar);
+                switch (menuItem)
+                {
+                    case '1':
+                        menu = MENUS.MHEX1;
+                        break;
+                    case '2':
+                        menu = MENUS.MHEX2;
+                        break;
+                    case '3':
+                        menu = MENUS.MHEX3;
+                        break;
+                }
             }
-            if (menuSelector == "3")
-            {
-                Console.Clear();
-                Console.WriteLine("Enter hexadecimal number below.");
-                Console.WriteLine();
-                Console.WriteLine("Input:");
-                playerInput = Convert.ToInt32(Console.ReadLine());
-                string playerAnswer = Convert.ToString(playerInput, 10);
-                Console.WriteLine("Answer:");
-                Console.WriteLine(playerAnswer);
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Invalid input!");
-                Console.ReadKey();
-            }
-            Console.ReadKey();
         }
 
         public void MenuLogicGate()
@@ -243,6 +171,114 @@ namespace ConsoleCalculator
         public void MenuShooterTarget()
         {
             Console.Clear();
+            Console.ReadKey();
+        }
+
+        public void MenuDecimalExpression()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter expressions below:");
+            Console.WriteLine();
+            Console.ReadLine();
+            //playerInput = EvaluateExpression(math);
+            //Console.WriteLine(playerInput);
+        }
+
+        public void MenuDecimalBinary()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter decimal number below.");
+            Console.WriteLine();
+            Console.WriteLine("Input:");
+            playerInput = Convert.ToInt32(Console.ReadLine());
+            string playerAnswer = Convert.ToString(playerInput, 2);
+            Console.WriteLine("Answer:");
+            Console.WriteLine(playerAnswer);
+            Console.ReadKey();
+        }
+
+        public void MenuDecimalHexadecimal()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter decimal number below.");
+            Console.WriteLine();
+            Console.WriteLine("Input:");
+            playerInput = Convert.ToInt32(Console.ReadLine());
+            string playerAnswer = Convert.ToString(playerInput, 16);
+            Console.WriteLine("Answer:");
+            Console.WriteLine(playerAnswer);
+            Console.ReadKey();
+        }
+
+        public void MenuBinaryExpression()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter expressions below:");
+            Console.WriteLine();
+            Console.ReadLine();
+            //playerInput = EvaluateExpression(math);
+            //Console.WriteLine(playerInput);
+        }
+
+        public void MenuBinaryDecimal()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter binary number below.");
+            Console.WriteLine();
+            Console.WriteLine("Input:");
+            playerInput = Convert.ToInt32(Console.ReadLine());
+            string playerAnswer = Convert.ToString(playerInput, 10);
+            Console.WriteLine("Answer:");
+            Console.WriteLine(playerAnswer);
+            Console.ReadKey();
+        }
+
+        public void MenuBinaryHexadecimal()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter binary number below.");
+            Console.WriteLine();
+            Console.WriteLine("Input:");
+            playerInput = Convert.ToInt32(Console.ReadLine());
+            string playerAnswer = Convert.ToString(playerInput, 16);
+            Console.WriteLine("Answer:");
+            Console.WriteLine(playerAnswer);
+            Console.ReadKey();
+        }
+
+        public void MenuHexadecimalExpression()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter expressions below:");
+            Console.WriteLine();
+            Console.ReadLine();
+            //playerInput = EvaluateExpression(math);
+            //Console.WriteLine(playerInput);
+        }
+
+        public void MenuHexadecimalBinary()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter hexadecimal number below.");
+            Console.WriteLine();
+            Console.WriteLine("Input:");
+            playerInput = Convert.ToInt32(Console.ReadLine());
+            string playerAnswer = Convert.ToString(playerInput, 2);
+            Console.WriteLine("Answer:");
+            Console.WriteLine(playerAnswer);
+            Console.ReadKey();
+        }
+
+        public void MenuHexadecimalDecimal()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter hexadecimal number below.");
+            Console.WriteLine();
+            Console.WriteLine("Input:");
+            playerInput = Convert.ToInt32(Console.ReadLine());
+            string playerAnswer = Convert.ToString(playerInput, 10);
+            Console.WriteLine("Answer:");
+            Console.WriteLine(playerAnswer);
             Console.ReadKey();
         }
     }
