@@ -12,14 +12,24 @@ namespace ConsoleCalculator
         string menuSelector;
         int playerInput;
         protected MENUS menu;
+
         //Getters
         public MENUS GetMenu()
         {
             return menu;
         }
+
+        //Setters
+        public void SetMenu(MENUS newMen)
+        {
+            menu = newMen;
+        }
+
         //Menus
         public void MenuMain()
         {
+            char menuItem;
+            Console.Clear();
             Console.WriteLine("Welcome to Console Calculator! What can I do for you today?");
             Console.WriteLine();
             Console.WriteLine("[1] Decimal Math");
@@ -29,10 +39,34 @@ namespace ConsoleCalculator
             Console.WriteLine("[5] Shooter/Target Solver");
             Console.WriteLine();
             Console.WriteLine("[0] Close Console Calculator");
+
+            menuItem = char.ToLower(Console.ReadKey().KeyChar);
+            switch(menuItem)
+            {
+                case '1':
+                    menu = MENUS.MDEC;
+                    break;
+                case '2':
+                    menu = MENUS.MBIN;
+                    break;
+                case '3':
+                    menu = MENUS.MHEX;
+                    break;
+                case '4':
+                    menu = MENUS.MLGS;
+                    break;
+                case '5':
+                    menu = MENUS.MSTS;
+                    break;
+                case '0':
+                    Environment.Exit(0);
+                    break;
+            }
         }
 
         public void MenuDecimal()
         {
+            char menuItem;
             Console.Clear();
             Console.WriteLine("You are now in the Decimal Math section. Select an option below.");
             Console.WriteLine();
@@ -41,7 +75,17 @@ namespace ConsoleCalculator
             Console.WriteLine("[3] Decimal to Hexadecimal Conversion");
             Console.WriteLine();
             Console.WriteLine("[~] Back to Main Menu");
-            menuSelector = Console.ReadLine();
+
+            menuItem = char.ToLower(Console.ReadKey().KeyChar);
+            switch (menuItem)
+            {
+                case '1':
+                    break;
+                case '2':
+                    break;
+                case '3':
+                    break;
+            }
             if (menuSelector == "1")
             {
                 Console.Clear();
@@ -201,6 +245,5 @@ namespace ConsoleCalculator
             Console.Clear();
             Console.ReadKey();
         }
-    
     }
 }
