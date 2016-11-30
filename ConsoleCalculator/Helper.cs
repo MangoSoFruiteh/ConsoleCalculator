@@ -8,8 +8,11 @@ namespace ConsoleCalculator
 {
     class Helper
     {
-
         public enum MENUS { MMAIN, MDEC, MBIN, MHEX, MLGS, MSTS }
-        
+
+        public static void Pause()
+        {
+            Console.ReadKey();
+        }
     }
 }
