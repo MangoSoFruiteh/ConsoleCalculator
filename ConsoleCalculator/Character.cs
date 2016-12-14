@@ -225,11 +225,10 @@ namespace ConsoleCalculator
             Console.Clear();
             Console.WriteLine("Enter binary number below.");
             Console.WriteLine();
-            Console.WriteLine("Input:");
-            playerInput = Convert.ToInt32(Console.ReadLine());
-            string playerAnswer = Convert.ToString(playerInput, 10);
-            Console.WriteLine("Answer:");
-            Console.WriteLine(playerAnswer);
+            Console.WriteLine("Binary:");
+            playerInput = Convert.ToInt32(Console.ReadLine(), 2);
+            Console.WriteLine("Decimal:");
+            Console.Write(playerInput);
             Console.ReadKey();
         }
 
@@ -238,10 +237,10 @@ namespace ConsoleCalculator
             Console.Clear();
             Console.WriteLine("Enter binary number below.");
             Console.WriteLine();
-            Console.WriteLine("Input:");
-            playerInput = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Binary:");
+            playerInput = Convert.ToInt32(Console.ReadLine(), 2);
             string playerAnswer = Convert.ToString(playerInput, 16);
-            Console.WriteLine("Answer:");
+            Console.WriteLine("Hexadecimal:");
             Console.WriteLine(playerAnswer);
             Console.ReadKey();
         }
@@ -261,10 +260,10 @@ namespace ConsoleCalculator
             Console.Clear();
             Console.WriteLine("Enter hexadecimal number below.");
             Console.WriteLine();
-            Console.WriteLine("Input:");
-            playerInput = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hexadecimal:");
+            playerInput = Convert.ToInt32(Console.ReadLine(), 16);
             string playerAnswer = Convert.ToString(playerInput, 2);
-            Console.WriteLine("Answer:");
+            Console.WriteLine("Binary:");
             Console.WriteLine(playerAnswer);
             Console.ReadKey();
         }
@@ -274,10 +273,10 @@ namespace ConsoleCalculator
             Console.Clear();
             Console.WriteLine("Enter hexadecimal number below.");
             Console.WriteLine();
-            Console.WriteLine("Input:");
-            playerInput = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hexadecimal:");
+            playerInput = Convert.ToInt32(Console.ReadLine(), 16);
             string playerAnswer = Convert.ToString(playerInput, 10);
-            Console.WriteLine("Answer:");
+            Console.WriteLine("Decimal:");
             Console.WriteLine(playerAnswer);
             Console.ReadKey();
         }
