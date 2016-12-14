@@ -171,6 +171,24 @@ namespace ConsoleCalculator
         public void MenuShooterTarget()
         {
             Console.Clear();
+            Console.WriteLine("Welcome to the Shooter/Target Solver!");
+            Console.WriteLine();
+            Console.WriteLine("Please enter the cliff height:");
+            double cliffHeight = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("Please enter the ground length:");
+            double groundLength = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("Please enter shooter barrel height:");
+            Console.WriteLine("(Subtract TEMP from shooter height)");
+            double barrelHeight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("Please enter target headshot height:");
+            Console.WriteLine("(Subtract 0.5' from target height)");
+            double headshotHeight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
+            double triangleHeight = (cliffHeight + headshotHeight) - barrelHeight;
+            double tanAngle = Math.Atan(triangleHeight/groundLength);
             Console.ReadKey();
         }
 
