@@ -32,11 +32,10 @@ namespace ConsoleCalculator
             string date = DateTime.Today.ToShortDateString();
             Console.WriteLine("Welcome to Console Calculator!\nThe current date is: " + date + "\n\nWhat can I do for you today?");
             Console.WriteLine();
-            Console.WriteLine("[1] Decimal Math");
-            Console.WriteLine("[2] Binary Math");
-            Console.WriteLine("[3] Hexadecimal Math");
-            Console.WriteLine("[4] Logic Gate Solver");
-            Console.WriteLine("[5] Shooter/Target Solver");
+            Console.WriteLine("[1] Math Expression");
+            Console.WriteLine("[2] Base Conversions");
+            Console.WriteLine("[3] Logic Gate Solver");
+            Console.WriteLine("[4] Shooter/Target Solver");
             Console.WriteLine();
             Console.WriteLine("[0] Close Console Calculator");
 
@@ -47,21 +46,37 @@ namespace ConsoleCalculator
                     menu = MENUS.MDEC;
                     break;
                 case '2':
-                    menu = MENUS.MBIN;
+                    menu = MENUS.MCON;
                     break;
                 case '3':
-                    menu = MENUS.MHEX;
-                    break;
-                case '4':
                     menu = MENUS.MLGS;
                     break;
-                case '5':
+                case '4':
                     menu = MENUS.MSTS;
                     break;
                 case '0':
                     Environment.Exit(0);
                     break;
             }
+        }
+
+        public void MenuConversions()
+        {
+            Console.Clear();
+            Console.WriteLine("Welcome to Base Conversions!");
+            Console.WriteLine();
+            Console.WriteLine("Enter converting FROM base:");
+            int fromBase = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter converting TO base:");
+            int toBase = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter conversion number below.");
+            Console.WriteLine();
+            Console.WriteLine("Input:");
+            playerInput = Convert.ToInt32(Console.ReadLine(), fromBase);
+            string playerAnswer = Convert.ToString(playerInput, toBase);
+            Console.WriteLine("Output:");
+            Console.WriteLine(playerAnswer);
+            Console.ReadKey();
         }
 
         public void MenuDecimal()
@@ -91,6 +106,9 @@ namespace ConsoleCalculator
                         break;
                     case '3':
                         menu = MENUS.MDEC3;
+                        break;
+                    case '`':
+                        menu = MENUS.MMAIN;
                         break;
                 }
             }
@@ -124,6 +142,9 @@ namespace ConsoleCalculator
                     case '3':
                         menu = MENUS.MBIN3;
                         break;
+                    case '`':
+                        menu = MENUS.MMAIN;
+                        break;
                 }
             }
         }
@@ -155,6 +176,9 @@ namespace ConsoleCalculator
                         break;
                     case '3':
                         menu = MENUS.MHEX3;
+                        break;
+                    case '`':
+                        menu = MENUS.MMAIN;
                         break;
                 }
             }
@@ -204,13 +228,26 @@ namespace ConsoleCalculator
 
         public void MenuDecimalExpression()
         {
-            Console.Clear();
-            Console.WriteLine("Enter expressions below:");
-            Console.WriteLine();
-            DataTable table = new DataTable();
-            var answer = table.Compute(Console.ReadLine(), "");
-            Console.WriteLine(answer);
-            Console.ReadKey();
+            bool oktogo = false;
+            while (!oktogo)
+            {
+                Console.Clear();
+                Console.WriteLine("Enter expressions below:\nType ESC to go back.");
+                Console.WriteLine();
+                string playerInput2 = Console.ReadLine();
+                if (playerInput2 == "ESC")
+                {
+                    oktogo = true;
+                    menu = MENUS.MDEC;
+                }
+                else
+                {
+                    DataTable table = new DataTable();
+                    var answer = table.Compute(playerInput2, "");
+                    Console.WriteLine(answer);
+                    Console.ReadKey();
+                }
+            }
         }
 
         public void MenuDecimalBinary()

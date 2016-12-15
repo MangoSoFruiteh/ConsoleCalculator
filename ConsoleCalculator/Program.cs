@@ -12,6 +12,7 @@ namespace ConsoleCalculator
     {
         static void Main(string[] args)
         {
+            Console.Title = "ConsoleCalculator";
             bool quit = false;
             Character Player = new Character();
             while(!quit)
@@ -63,6 +64,9 @@ namespace ConsoleCalculator
                         break;
                     case MENUS.MHEX3:
                         Player.MenuHexadecimalDecimal();
+                        break;
+                    case MENUS.MCON:
+                        Player.MenuConversions();
                         break;
                 }
             }
