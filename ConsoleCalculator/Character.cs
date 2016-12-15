@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ConsoleCalculator.Helper;
+using System.Data;
 
 namespace ConsoleCalculator
 {
-    class Character
+    class Character : Helper
     {
         int playerInput;
         protected MENUS menu;
@@ -29,7 +29,8 @@ namespace ConsoleCalculator
         {
             char menuItem;
             Console.Clear();
-            Console.WriteLine("Welcome to Console Calculator! What can I do for you today?");
+            string date = DateTime.Today.ToShortDateString();
+            Console.WriteLine("Welcome to Console Calculator!\nThe current date is: " + date + "\n\nWhat can I do for you today?");
             Console.WriteLine();
             Console.WriteLine("[1] Decimal Math");
             Console.WriteLine("[2] Binary Math");
@@ -189,6 +190,15 @@ namespace ConsoleCalculator
             Console.WriteLine();
             double triangleHeight = (cliffHeight + headshotHeight) - barrelHeight;
             double tanAngle = Math.Atan(triangleHeight/groundLength);
+            Console.Clear();
+            Console.WriteLine("These are the numbers you gave me:");
+            Console.WriteLine();
+            Console.WriteLine("Cliff Height: " + cliffHeight);
+            Console.WriteLine("Ground Length: " + groundLength);
+            Console.WriteLine("Barrel Height: " + barrelHeight);
+            Console.WriteLine("Headshot Height: " + headshotHeight);
+            Console.WriteLine("Triangle Height: " + triangleHeight);
+            Console.WriteLine("Angle: " + tanAngle);
             Console.ReadKey();
         }
 
@@ -197,9 +207,10 @@ namespace ConsoleCalculator
             Console.Clear();
             Console.WriteLine("Enter expressions below:");
             Console.WriteLine();
-            Console.ReadLine();
-            //playerInput = EvaluateExpression(math);
-            //Console.WriteLine(playerInput);
+            DataTable table = new DataTable();
+            var answer = table.Compute(Console.ReadLine(), "");
+            Console.WriteLine(answer);
+            Console.ReadKey();
         }
 
         public void MenuDecimalBinary()
